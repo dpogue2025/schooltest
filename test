@@ -1,0 +1,35 @@
+def get_price():
+    while True:
+        try:
+            price = float(input("Enter price: "))
+            return price
+        except ValueError:
+            print("Invalid format. Please enter a valid float price.")
+
+def get_quantity():
+    while True:
+        try:
+            quantity = int(input("Enter quantity: "))
+            return quantity
+        except ValueError:
+            print("Invalid format. Please enter a valid integer quantity.")
+
+def main():
+    print("=== Line Item Total Calculation ===")
+    
+    while True:
+        price = get_price()
+        quantity = get_quantity()
+        
+        total = price * quantity
+        print(f"Total: {total:.2f}")
+
+        choice = input("Enter another line item? (y/n): ").strip().lower()
+        if choice != 'y':
+            break
+    
+    print("Program ended.")
+
+# Invoke the main function to run the program
+if __name__ == "__main__":
+    main()
