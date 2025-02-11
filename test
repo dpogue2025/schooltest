@@ -1,7 +1,7 @@
 def get_price():
     while True:
         try:
-            price = float(input("Enter price: "))
+            price = float(input("Enter price (as a float): "))
             return price
         except ValueError:
             print("Invalid format. Please enter a valid float price.")
@@ -9,20 +9,20 @@ def get_price():
 def get_quantity():
     while True:
         try:
-            quantity = int(input("Enter quantity: "))
+            quantity = int(input("Enter quantity (as an integer): "))
             return quantity
         except ValueError:
             print("Invalid format. Please enter a valid integer quantity.")
 
 def main():
-    print("=== Line Item Total Calculation ===")
+    print("=== The Invoice Line Item Calculator ===")
     
     while True:
         price = get_price()
         quantity = get_quantity()
         
         total = price * quantity
-        print(f"Total: {total:.2f}")
+        print(f"Price: \${price:.2f}, Quantity: {quantity}, Total: \${total:.2f}")
 
         choice = input("Enter another line item? (y/n): ").strip().lower()
         if choice != 'y':
